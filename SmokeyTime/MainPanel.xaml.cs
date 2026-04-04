@@ -1,5 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace SmokeyTime
 {
@@ -49,20 +50,23 @@ namespace SmokeyTime
             var navigationPanel = FindName("NavigationPanel") as StackPanel;
             if (navigationPanel == null) return;
 
+            var colorConverter = new ColorConverter();
+            var brushConverter = new BrushConverter();
+
             foreach (var child in navigationPanel.Children)
             {
                 if (child is Button btn)
                 {
                     if (btn == activeButton)
                     {
-                        btn.Background = (System.Windows.Media.Brush)new System.Windows.Media.ColorConverter().ConvertFromString("#374151");
-                        btn.Foreground = (System.Windows.Media.Brush)new System.Windows.Media.BrushConverter().ConvertFromString("White");
+                        btn.Background = (Brush)colorConverter.ConvertFromString("#374151");
+                        btn.Foreground = (Brush)brushConverter.ConvertFromString("White");
                         btn.FontWeight = FontWeights.SemiBold;
                     }
                     else
                     {
-                        btn.Background = System.Windows.Media.Brushes.Transparent;
-                        btn.Foreground = (System.Windows.Media.Brush)new System.Windows.Media.BrushConverter().ConvertFromString("#d1d5db");
+                        btn.Background = Brushes.Transparent;
+                        btn.Foreground = (Brush)brushConverter.ConvertFromString("#d1d5db");
                         btn.FontWeight = FontWeights.Normal;
                     }
                 }

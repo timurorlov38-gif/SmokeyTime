@@ -8,120 +8,112 @@
         Background="#f9fafb">
     
     <Grid>
-        <TabControl x:Name="MainTabControl" Background="Transparent" BorderThickness="0">
-            <TabControl.Template>
-                <ControlTemplate TargetType="TabControl">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        
-                        <!-- Header с навигацией -->
-                        <Border Grid.Row="0" Background="#1a253a" Padding="20,15">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Header с навигацией -->
+        <Border Grid.Row="0" Background="#1a253a" Padding="20,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
 
-                                <!-- Logo and Title -->
-                                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-                                    <Viewbox Width="32" Height="32" Margin="0,0,12,0">
-                                        <Canvas Width="24" Height="24">
-                                            <Path Fill="White" 
-                                                  Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
-                                        </Canvas>
-                                    </Viewbox>
-                                    <StackPanel>
-                                        <TextBlock Text="Smokey Time" 
-                                                   FontSize="20" 
-                                                   FontWeight="Bold"
-                                                   Foreground="White"/>
-                                        <TextBlock Text="Система автоматизации" 
-                                                   FontSize="12"
-                                                   Foreground="#9ca3af"/>
-                                    </StackPanel>
-                                </StackPanel>
+                <!-- Logo and Title -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Viewbox Width="32" Height="32" Margin="0,0,12,0">
+                        <Canvas Width="24" Height="24">
+                            <Path Fill="White" 
+                                  Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                        </Canvas>
+                    </Viewbox>
+                    <StackPanel>
+                        <TextBlock Text="Smokey Time" 
+                                   FontSize="20" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Система автоматизации" 
+                                   FontSize="12"
+                                   Foreground="#9ca3af"/>
+                    </StackPanel>
+                </StackPanel>
 
-                                <!-- Navigation Menu (Tabs) -->
-                                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Button Content="Панель управления" Click="TabButton_Click" Tag="0"
-                                            Background="#374151" Foreground="White" Padding="15,8" Margin="5,0" 
-                                            BorderThickness="0" FontWeight="SemiBold" Cursor="Hand" FontSize="14">
-                                        <Button.Template>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Button.Template>
-                                    </Button>
-                                    <Button Content="Касса" Click="TabButton_Click" Tag="1"
-                                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
-                                            BorderThickness="0" Cursor="Hand" FontSize="14">
-                                        <Button.Template>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Button.Template>
-                                    </Button>
-                                    <Button Content="Склад" Click="TabButton_Click" Tag="2"
-                                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
-                                            BorderThickness="0" Cursor="Hand" FontSize="14">
-                                        <Button.Template>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Button.Template>
-                                    </Button>
-                                    <Button Content="Отчёты" Click="TabButton_Click" Tag="3"
-                                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
-                                            BorderThickness="0" Cursor="Hand" FontSize="14">
-                                        <Button.Template>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Button.Template>
-                                    </Button>
-                                    <Button Content="Настройки" Click="TabButton_Click" Tag="4"
-                                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
-                                            BorderThickness="0" Cursor="Hand" FontSize="14">
-                                        <Button.Template>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Button.Template>
-                                    </Button>
-                                </StackPanel>
+                <!-- Navigation Menu (Tabs) -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="NavigationPanel">
+                    <Button x:Name="btnDashboard" Content="Панель управления" Click="TabButton_Click" Tag="0"
+                            Background="#374151" Foreground="White" Padding="15,8" Margin="5,0" 
+                            BorderThickness="0" FontWeight="SemiBold" Cursor="Hand" FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnPOS" Content="Касса" Click="TabButton_Click" Tag="1"
+                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
+                            BorderThickness="0" Cursor="Hand" FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnWarehouse" Content="Склад" Click="TabButton_Click" Tag="2"
+                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
+                            BorderThickness="0" Cursor="Hand" FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnReports" Content="Отчёты" Click="TabButton_Click" Tag="3"
+                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
+                            BorderThickness="0" Cursor="Hand" FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnSettings" Content="Настройки" Click="TabButton_Click" Tag="4"
+                            Background="Transparent" Foreground="#d1d5db" Padding="15,8" Margin="5,0" 
+                            BorderThickness="0" Cursor="Hand" FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
 
-                                <!-- User Info -->
-                                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
-                                    <StackPanel Margin="0,0,15,0">
-                                        <TextBlock Text="Администратор" FontSize="14" FontWeight="SemiBold" Foreground="White"/>
-                                        <TextBlock Text="Администратор" FontSize="12" Foreground="#9ca3af"/>
-                                    </StackPanel>
-                                    <Border Background="White" CornerRadius="20" Width="40" Height="40"/>
-                                </StackPanel>
-                            </Grid>
-                        </Border>
+                <!-- User Info -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <StackPanel Margin="0,0,15,0">
+                        <TextBlock Text="Администратор" FontSize="14" FontWeight="SemiBold" Foreground="White"/>
+                        <TextBlock Text="Администратор" FontSize="12" Foreground="#9ca3af"/>
+                    </StackPanel>
+                    <Border Background="White" CornerRadius="20" Width="40" Height="40"/>
+                </StackPanel>
+            </Grid>
+        </Border>
 
-                        <!-- Content Area -->
-                        <Border Grid.Row="1" Background="#f9fafb" Padding="30">
-                            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-                        </Border>
-                    </Grid>
-                </ControlTemplate>
-            </TabControl.Template>
-        </TabControl>
+        <!-- Content Area -->
+        <Border Grid.Row="1" Background="#f9fafb" Padding="30">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        </Border>
     </Grid>
 </Window>
