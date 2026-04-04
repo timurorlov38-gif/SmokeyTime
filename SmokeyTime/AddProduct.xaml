@@ -1,0 +1,362 @@
+﻿<Window x:Class="SmokeyTime.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Добавить товар"
+        Height="700" Width="600"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        Background="White">
+
+    <Grid Margin="25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" 
+                       Text="Добавить товар" 
+                       FontSize="24" 
+                       FontWeight="Bold"
+                       Foreground="#111827"
+                       VerticalAlignment="Center"/>
+
+            <Button Grid.Column="1" 
+                    Content="✕"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    FontSize="18"
+                    Width="32"
+                    Height="32"
+                    Cursor="Hand"
+                    Foreground="#6b7280">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <!-- Form Fields -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Product Name -->
+                <StackPanel Margin="0,0,0,20">
+                    <TextBlock Text="Название *" 
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="#374151"
+                               Margin="0,0,0,8"/>
+                    <Border Background="#f3f4f6" 
+                            CornerRadius="6" 
+                            Padding="12,10"
+                            BorderThickness="2"
+                            BorderBrush="#d1d5db">
+                        <TextBox x:Name="ProductNameTextBox"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 FontSize="14"
+                                 Foreground="#111827"
+                                 VerticalContentAlignment="Center"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- Category and Barcode -->
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Category -->
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Категория" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="#374151"
+                                   Margin="0,0,0,8"/>
+                        <Border Background="#f3f4f6" 
+                                CornerRadius="6" 
+                                Padding="12,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ComboBox x:Name="CategoryComboBox"
+                                          Grid.Column="0"
+                                          BorderThickness="0"
+                                          Background="Transparent"
+                                          FontSize="14"
+                                          Foreground="#111827"
+                                          VerticalContentAlignment="Center">
+                                    <ComboBoxItem Content="Аксессуары"/>
+                                    <ComboBoxItem Content="Кальяны"/>
+                                    <ComboBoxItem Content="Табак"/>
+                                    <ComboBoxItem Content="Жидкости"/>
+                                    <ComboBoxItem Content="Уголь"/>
+                                    <ComboBoxItem Content="POD-системы"/>
+                                </ComboBox>
+
+                                <Viewbox Grid.Column="1" Width="16" Height="16" Margin="0,0,8,0">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Fill="#6b7280" 
+                                              Data="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                    </Canvas>
+                                </Viewbox>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Barcode -->
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Штрихкод *" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="#374151"
+                                   Margin="0,0,0,8"/>
+                        <Border Background="#f3f4f6" 
+                                CornerRadius="6" 
+                                Padding="12,10">
+                            <TextBox x:Name="BarcodeTextBox"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     FontSize="14"
+                                     Foreground="#111827"
+                                     VerticalContentAlignment="Center"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Price and Cost -->
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Sale Price -->
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Цена продажи (₽)" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="#374151"
+                                   Margin="0,0,0,8"/>
+                        <Border Background="#f3f4f6" 
+                                CornerRadius="6" 
+                                Padding="12,10">
+                            <TextBox x:Name="SalePriceTextBox"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     FontSize="14"
+                                     Foreground="#111827"
+                                     VerticalContentAlignment="Center"
+                                     Text="0"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Cost Price -->
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Себестоимость (₽)" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="#374151"
+                                   Margin="0,0,0,8"/>
+                        <Border Background="#f3f4f6" 
+                                CornerRadius="6" 
+                                Padding="12,10">
+                            <TextBox x:Name="CostPriceTextBox"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     FontSize="14"
+                                     Foreground="#111827"
+                                     VerticalContentAlignment="Center"
+                                     Text="0"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Stock and Min Stock -->
+                <Grid Margin="0,0,0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Stock -->
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Остаток (шт)" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="#374151"
+                                   Margin="0,0,0,8"/>
+                        <Border Background="#f3f4f6" 
+                                CornerRadius="6" 
+                                Padding="12,10">
+                            <TextBox x:Name="StockTextBox"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     FontSize="14"
+                                     Foreground="#111827"
+                                     VerticalContentAlignment="Center"
+                                     Text="0"/>
+                        </Border>
+                    </StackPanel>
+
+                    <!-- Min Stock -->
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="Минимальный остаток (шт)" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="#374151"
+                                   Margin="0,0,0,8"/>
+                        <Border Background="#f3f4f6" 
+                                CornerRadius="6" 
+                                Padding="12,10">
+                            <TextBox x:Name="MinStockTextBox"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     FontSize="14"
+                                     Foreground="#111827"
+                                     VerticalContentAlignment="Center"
+                                     Text="0"/>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Description -->
+                <StackPanel Margin="0,0,0,20">
+                    <TextBlock Text="Описание" 
+                               FontSize="14"
+                               FontWeight="SemiBold"
+                               Foreground="#374151"
+                               Margin="0,0,0,8"/>
+                    <Border Background="#f3f4f6" 
+                            CornerRadius="6" 
+                            Padding="12,10">
+                        <TextBox x:Name="DescriptionTextBox"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 FontSize="14"
+                                 Foreground="#111827"
+                                 TextWrapping="Wrap"
+                                 AcceptsReturn="True"
+                                 VerticalAlignment="Top"
+                                 MinHeight="80"/>
+                    </Border>
+                </StackPanel>
+
+                <!-- Age Restriction Checkbox -->
+                <CheckBox x:Name="AgeRestrictionCheckBox"
+                          Content="Товар с возрастным ограничением 18+"
+                          FontSize="14"
+                          Foreground="#374151"
+                          Margin="0,0,0,25">
+                    <CheckBox.Template>
+                        <ControlTemplate TargetType="CheckBox">
+                            <StackPanel Orientation="Horizontal">
+                                <Border x:Name="CheckBoxBorder"
+                                        Width="20"
+                                        Height="20"
+                                        BorderThickness="2"
+                                        BorderBrush="#d1d5db"
+                                        CornerRadius="4"
+                                        Margin="0,0,10,0">
+                                    <Path x:Name="CheckMark"
+                                          Data="M1,5L5,9L9,5"
+                                          Stroke="White"
+                                          StrokeThickness="2"
+                                          Visibility="Collapsed"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                                </Border>
+                                <ContentPresenter VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="CheckBoxBorder" Property="Background" Value="#1a253a"/>
+                                    <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="#1a253a"/>
+                                    <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="#1a253a"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </CheckBox.Template>
+                </CheckBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Action Buttons -->
+        <Grid Grid.Row="2" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Cancel Button -->
+            <Button Grid.Column="1"
+                    Content="✕ Отмена"
+                    Background="White"
+                    Foreground="#374151"
+                    Padding="25,12"
+                    Margin="0,0,10,0"
+                    BorderThickness="1"
+                    BorderBrush="#d1d5db"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Save Button -->
+            <Button Grid.Column="2"
+                    Content="💾 Сохранить"
+                    Background="#1a253a"
+                    Foreground="White"
+                    Padding="25,12"
+                    BorderThickness="0"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="6"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

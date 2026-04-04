@@ -1,0 +1,686 @@
+﻿<Window x:Class="SmokeyTime.SettingsBackupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Smokey Time - Резервное копирование"
+        Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="#f9fafb">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#1a253a" Padding="20,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo and Title -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Viewbox Width="32" Height="32" Margin="0,0,12,0">
+                        <Canvas Width="24" Height="24">
+                            <Path Fill="White" 
+                                  Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </Canvas>
+                    </Viewbox>
+                    <StackPanel>
+                        <TextBlock Text="Smokey Time" 
+                                   FontSize="20" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Система автоматизации" 
+                                   FontSize="12"
+                                   Foreground="#9ca3af"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Navigation Menu -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Content="Панель управления" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Касса" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Склад" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Отчёты" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Настройки" 
+                            Background="#374151"
+                            Foreground="White"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            FontWeight="SemiBold"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <!-- User Info -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <StackPanel Margin="0,0,15,0" HorizontalAlignment="Right">
+                        <TextBlock Text="Администратор" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Администратор" 
+                                   FontSize="12"
+                                   Foreground="#9ca3af"/>
+                    </StackPanel>
+                    <Border Background="White" 
+                            CornerRadius="20" 
+                            Width="40" 
+                            Height="40"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="30,20">
+            <StackPanel>
+                <!-- Page Title -->
+                <StackPanel Margin="0,0,0,25">
+                    <TextBlock Text="Настройки системы" 
+                               FontSize="28" 
+                               FontWeight="Bold"
+                               Foreground="#111827"/>
+                    <TextBlock Text="Конфигурация и администрирование" 
+                               FontSize="14"
+                               Foreground="#6b7280"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <!-- Settings Tabs -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                    <Button Content="Общие" 
+                            Background="Transparent"
+                            Foreground="#6b7280"
+                            Padding="20,10"
+                            Margin="0,0,5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Пользователи" 
+                            Background="Transparent"
+                            Foreground="#6b7280"
+                            Padding="20,10"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Оборудование" 
+                            Background="Transparent"
+                            Foreground="#6b7280"
+                            Padding="20,10"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Резервное копирование" 
+                            Background="#e5e7eb"
+                            Foreground="#111827"
+                            Padding="20,10"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            FontWeight="SemiBold"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <!-- Backup Settings Card -->
+                <Border Background="White" 
+                        CornerRadius="10" 
+                        Padding="30"
+                        BorderBrush="#e5e7eb"
+                        BorderThickness="1"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <!-- Section Title -->
+                        <StackPanel Margin="0,0,0,25">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                <Viewbox Width="24" Height="24" Margin="0,0,10,0">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Fill="#1a253a" 
+                                              Data="M12,3A9,9 0 0,0 3,12H0L5,17L10,12H7A7,7 0 0,1 12,5A7,7 0 0,1 17,12A7,7 0 0,1 12,19C10.5,19 9.09,18.5 7.94,17.67L6.5,19.14C8.09,20.3 10,21 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M14,12A2,2 0 0,0 12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12Z"/>
+                                    </Canvas>
+                                </Viewbox>
+                                <StackPanel>
+                                    <TextBlock Text="Резервное копирование" 
+                                               FontSize="18"
+                                               FontWeight="SemiBold"
+                                               Foreground="#111827"
+                                               VerticalAlignment="Center"/>
+                                    <TextBlock Text="Настройка автоматического и ручного копирования БД" 
+                                               FontSize="14"
+                                               Foreground="#6b7280"
+                                               Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- Backup Status -->
+                        <Border Background="#f0fdf4" 
+                                CornerRadius="8" 
+                                Padding="20"
+                                Margin="0,0,0,25"
+                                BorderBrush="#86efac"
+                                BorderThickness="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Ellipse Grid.Column="0" 
+                                         Width="12" 
+                                         Height="12" 
+                                         Fill="#10b981"
+                                         Margin="0,0,12,0"/>
+
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Система защищена" 
+                                               FontSize="14"
+                                               FontWeight="SemiBold"
+                                               Foreground="#059669"/>
+                                    <TextBlock Text="Последняя резервная копия: 15.03.2027, 02:00" 
+                                               FontSize="13"
+                                               Foreground="#6b7280"
+                                               Margin="0,4,0,0"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                        <!-- Backup Location -->
+                        <StackPanel Margin="0,0,0,25">
+                            <TextBlock Text="Путь к папке резервных копий" 
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,8"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Column="0" 
+                                        Background="#f3f4f6" 
+                                        CornerRadius="6" 
+                                        Padding="12,10"
+                                        Margin="0,0,10,0">
+                                    <TextBox BorderThickness="0"
+                                             Background="Transparent"
+                                             FontSize="14"
+                                             Foreground="#111827"
+                                             VerticalContentAlignment="Center"
+                                             Text="C:\SmokeyTime\Backups"
+                                             IsReadOnly="True"/>
+                                </Border>
+
+                                <Button Grid.Column="1" 
+                                        Content="Изменить"
+                                        Background="White"
+                                        Foreground="#374151"
+                                        Padding="20,10"
+                                        BorderThickness="1"
+                                        BorderBrush="#d1d5db"
+                                        FontSize="14"
+                                        Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" 
+                                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                                    CornerRadius="6"
+                                                    Padding="{TemplateBinding Padding}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+
+                        <!-- Auto Backup Schedule -->
+                        <StackPanel Margin="0,0,0,25">
+                            <TextBlock Text="Автоматическое резервное копирование" 
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,15"/>
+
+                            <CheckBox Content="Включить автоматическое копирование" 
+                                      IsChecked="True"
+                                      FontSize="14"
+                                      Foreground="#374151"
+                                      Margin="0,0,0,15">
+                                <CheckBox.Template>
+                                    <ControlTemplate TargetType="CheckBox">
+                                        <StackPanel Orientation="Horizontal">
+                                            <Border x:Name="CheckBoxBorder"
+                                                    Width="20"
+                                                    Height="20"
+                                                    BorderThickness="2"
+                                                    BorderBrush="#d1d5db"
+                                                    CornerRadius="4"
+                                                    Margin="0,0,10,0">
+                                                <Path x:Name="CheckMark"
+                                                      Data="M1,5L5,9L9,5"
+                                                      Stroke="White"
+                                                      StrokeThickness="2"
+                                                      Visibility="Collapsed"
+                                                      HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"/>
+                                            </Border>
+                                            <ContentPresenter VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="CheckBoxBorder" Property="Background" Value="#1a253a"/>
+                                                <Setter TargetName="CheckBoxBorder" Property="BorderBrush" Value="#1a253a"/>
+                                                <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </CheckBox.Template>
+                            </CheckBox>
+
+                            <Grid Margin="20,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" 
+                                           Text="Периодичность:" 
+                                           FontSize="14"
+                                           Foreground="#6b7280"
+                                           VerticalAlignment="Center"
+                                           Margin="0,0,15,0"/>
+
+                                <Border Grid.Column="1" 
+                                        Background="#f3f4f6" 
+                                        CornerRadius="6" 
+                                        Padding="12,10"
+                                        Width="200"
+                                        HorizontalAlignment="Left">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <ComboBox Grid.Column="0"
+                                                  BorderThickness="0"
+                                                  Background="Transparent"
+                                                  FontSize="14"
+                                                  Foreground="#111827"
+                                                  VerticalContentAlignment="Center"
+                                                  SelectedIndex="0">
+                                            <ComboBoxItem Content="Ежедневно"/>
+                                            <ComboBoxItem Content="Еженедельно"/>
+                                            <ComboBoxItem Content="Ежемесячно"/>
+                                        </ComboBox>
+
+                                        <Viewbox Grid.Column="1" Width="16" Height="16" Margin="0,0,8,0">
+                                            <Canvas Width="24" Height="24">
+                                                <Path Fill="#6b7280" 
+                                                      Data="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+                                            </Canvas>
+                                        </Viewbox>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+
+                        <!-- Backup Retention -->
+                        <StackPanel Margin="0,0,0,30">
+                            <TextBlock Text="Хранение резервных копий" 
+                                       FontSize="14"
+                                       FontWeight="SemiBold"
+                                       Foreground="#374151"
+                                       Margin="0,0,0,15"/>
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" 
+                                           Text="Количество копий:" 
+                                           FontSize="14"
+                                           Foreground="#6b7280"
+                                           VerticalAlignment="Center"
+                                           Margin="0,0,15,0"/>
+
+                                <Border Grid.Column="1" 
+                                        Background="#f3f4f6" 
+                                        CornerRadius="6" 
+                                        Padding="12,10"
+                                        Width="200"
+                                        HorizontalAlignment="Left">
+                                    <TextBox BorderThickness="0"
+                                             Background="Transparent"
+                                             FontSize="14"
+                                             Foreground="#111827"
+                                             VerticalContentAlignment="Center"
+                                             Text="7"/>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+
+                        <!-- Manual Backup Button -->
+                        <Button Content="💾 Создать резервную копию сейчас"
+                                Background="#1a253a"
+                                Foreground="White"
+                                Height="50"
+                                BorderThickness="0"
+                                FontWeight="SemiBold"
+                                FontSize="16"
+                                Cursor="Hand"
+                                HorizontalAlignment="Left"
+                                Padding="30,15">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" 
+                                            CornerRadius="6"
+                                            Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <!-- Backup History Card -->
+                <Border Background="White" 
+                        CornerRadius="10" 
+                        Padding="30"
+                        BorderBrush="#e5e7eb"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <!-- Section Title -->
+                        <StackPanel Margin="0,0,0,20">
+                            <TextBlock Text="История резервных копий" 
+                                       FontSize="16"
+                                       FontWeight="SemiBold"
+                                       Foreground="#111827"/>
+                        </StackPanel>
+
+                        <!-- Backup History Table Header -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="Имя файла" FontSize="13" FontWeight="SemiBold" Foreground="#374151"/>
+                            <TextBlock Grid.Column="1" Text="Дата создания" FontSize="13" FontWeight="SemiBold" Foreground="#374151"/>
+                            <TextBlock Grid.Column="2" Text="Размер" FontSize="13" FontWeight="SemiBold" Foreground="#374151"/>
+                            <TextBlock Grid.Column="3" Text="Действия" FontSize="13" FontWeight="SemiBold" Foreground="#374151" HorizontalAlignment="Center"/>
+                        </Grid>
+
+                        <!-- Separator -->
+                        <Border Height="1" Background="#e5e7eb" Margin="0,0,0,10"/>
+
+                        <!-- Backup 1 -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="backup_2027-03-15_02-00.db" FontSize="14" Foreground="#111827" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="15.03.2027 02:00" FontSize="14" Foreground="#6b7280" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" Text="24.5 МБ" FontSize="14" Foreground="#6b7280" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Background="Transparent" BorderThickness="0" Padding="5" Cursor="Hand" Margin="0,0,5,0">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <Viewbox Width="18" Height="18">
+                                                    <Canvas Width="24" Height="24">
+                                                        <Path Fill="#3b82f6" Data="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button Background="Transparent" BorderThickness="0" Padding="5" Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <Viewbox Width="18" Height="18">
+                                                    <Canvas Width="24" Height="24">
+                                                        <Path Fill="#ef4444" Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- Backup 2 -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="backup_2027-03-14_02-00.db" FontSize="14" Foreground="#111827" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="14.03.2027 02:00" FontSize="14" Foreground="#6b7280" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" Text="24.3 МБ" FontSize="14" Foreground="#6b7280" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Background="Transparent" BorderThickness="0" Padding="5" Cursor="Hand" Margin="0,0,5,0">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <Viewbox Width="18" Height="18">
+                                                    <Canvas Width="24" Height="24">
+                                                        <Path Fill="#3b82f6" Data="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button Background="Transparent" BorderThickness="0" Padding="5" Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <Viewbox Width="18" Height="18">
+                                                    <Canvas Width="24" Height="24">
+                                                        <Path Fill="#ef4444" Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- Backup 3 -->
+                        <Grid Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="backup_2027-03-13_02-00.db" FontSize="14" Foreground="#111827" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Text="13.03.2027 02:00" FontSize="14" Foreground="#6b7280" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="2" Text="24.1 МБ" FontSize="14" Foreground="#6b7280" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button Background="Transparent" BorderThickness="0" Padding="5" Cursor="Hand" Margin="0,0,5,0">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <Viewbox Width="18" Height="18">
+                                                    <Canvas Width="24" Height="24">
+                                                        <Path Fill="#3b82f6" Data="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button Background="Transparent" BorderThickness="0" Padding="5" Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <Viewbox Width="18" Height="18">
+                                                    <Canvas Width="24" Height="24">
+                                                        <Path Fill="#ef4444" Data="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
+                                                    </Canvas>
+                                                </Viewbox>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

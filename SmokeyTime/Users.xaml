@@ -1,0 +1,365 @@
+﻿<Window x:Class="SmokeyTime.SettingsUsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Smokey Time - Управление пользователями"
+        Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="#f9fafb">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#1a253a" Padding="20,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo and Title -->
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Viewbox Width="32" Height="32" Margin="0,0,12,0">
+                        <Canvas Width="24" Height="24">
+                            <Path Fill="White" 
+                                  Data="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </Canvas>
+                    </Viewbox>
+                    <StackPanel>
+                        <TextBlock Text="Smokey Time" 
+                                   FontSize="20" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Система автоматизации" 
+                                   FontSize="12"
+                                   Foreground="#9ca3af"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Navigation Menu -->
+                <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Content="Панель управления" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Касса" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Склад" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Отчёты" 
+                            Background="Transparent"
+                            Foreground="#d1d5db"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Настройки" 
+                            Background="#374151"
+                            Foreground="White"
+                            Padding="15,8"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            FontWeight="SemiBold"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="5"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <!-- User Info -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <StackPanel Margin="0,0,15,0" HorizontalAlignment="Right">
+                        <TextBlock Text="Администратор" 
+                                   FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Администратор" 
+                                   FontSize="12"
+                                   Foreground="#9ca3af"/>
+                    </StackPanel>
+                    <Border Background="White" 
+                            CornerRadius="20" 
+                            Width="40" 
+                            Height="40"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="30,20">
+            <StackPanel>
+                <!-- Page Title -->
+                <StackPanel Margin="0,0,0,25">
+                    <TextBlock Text="Настройки системы" 
+                               FontSize="28" 
+                               FontWeight="Bold"
+                               Foreground="#111827"/>
+                    <TextBlock Text="Конфигурация и администрирование" 
+                               FontSize="14"
+                               Foreground="#6b7280"
+                               Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <!-- Settings Tabs -->
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25">
+                    <Button Content="Общие" 
+                            Background="Transparent"
+                            Foreground="#6b7280"
+                            Padding="20,10"
+                            Margin="0,0,5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Пользователи" 
+                            Background="#e5e7eb"
+                            Foreground="#111827"
+                            Padding="20,10"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            FontWeight="SemiBold"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Оборудование" 
+                            Background="Transparent"
+                            Foreground="#6b7280"
+                            Padding="20,10"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Content="Резервное копирование" 
+                            Background="Transparent"
+                            Foreground="#6b7280"
+                            Padding="20,10"
+                            Margin="5,0"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            FontSize="14">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        CornerRadius="6"
+                                        Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <!-- User Management Card -->
+                <Border Background="White" 
+                        CornerRadius="10" 
+                        Padding="30"
+                        BorderBrush="#e5e7eb"
+                        BorderThickness="1">
+                    <StackPanel>
+                        <!-- Section Title -->
+                        <StackPanel Margin="0,0,0,25">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                <Viewbox Width="24" Height="24" Margin="0,0,10,0">
+                                    <Canvas Width="24" Height="24">
+                                        <Path Fill="#1a253a" 
+                                              Data="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                                    </Canvas>
+                                </Viewbox>
+                                <StackPanel>
+                                    <TextBlock Text="Управление пользователями" 
+                                               FontSize="18"
+                                               FontWeight="SemiBold"
+                                               Foreground="#111827"
+                                               VerticalAlignment="Center"/>
+                                    <TextBlock Text="Учётные записи сотрудников" 
+                                               FontSize="14"
+                                               Foreground="#6b7280"
+                                               Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- User List -->
+                        <StackPanel>
+                            <!-- User 1: Administrator -->
+                            <Border Background="#f9fafb" 
+                                    CornerRadius="8" 
+                                    Padding="20"
+                                    Margin="0,0,0,12"
+                                    BorderBrush="#e5e7eb"
+                                    BorderThickness="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Администратор" 
+                                                   FontSize="16"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#111827"
+                                                   Margin="0,0,0,4"/>
+                                        <TextBlock Text="admin" 
+                                                   FontSize="14"
+                                                   Foreground="#6b7280"/>
+                                    </StackPanel>
+
+                                    <Border Grid.Column="1" 
+                                            Background="#1a253a" 
+                                            CornerRadius="12" 
+                                            Padding="12,6">
+                                        <TextBlock Text="Администратор" 
+                                                   FontSize="13"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="White"/>
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <!-- User 2: Cashier -->
+                            <Border Background="#f9fafb" 
+                                    CornerRadius="8" 
+                                    Padding="20"
+                                    Margin="0,0,0,12"
+                                    BorderBrush="#e5e7eb"
+                                    BorderThickness="1">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Кассир Иван" 
+                                                   FontSize="16"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#111827"
+                                                   Margin="0,0,0,4"/>
+                                        <TextBlock Text="cashier" 
+                                                   FontSize="14"
+                                                   Foreground="#6b7280"/>
+                                    </StackPanel>
+
+                                    <Border Grid.Column="1" 
+                                            Background="#e5e7eb" 
+                                            CornerRadius="12" 
+                                            Padding="12,6">
+                                        <TextBlock Text="Кассир" 
+                                                   FontSize="13"
+                                                   FontWeight="SemiBold"
+                                                   Foreground="#374151"/>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
