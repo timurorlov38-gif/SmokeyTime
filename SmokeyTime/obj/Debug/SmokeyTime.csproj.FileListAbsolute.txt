@@ -36,3 +36,33 @@ C:\Users\iurel\Desktop\Учёба\3 курс\Санковец\РПМ\SmokeyTime\
 C:\Users\iurel\Source\Repos\SmokeyTime\SmokeyTime\bin\Debug\SmokeyTime.exe.config
 C:\Users\iurel\Source\Repos\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime.exe
 C:\Users\iurel\Source\Repos\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime.pdb
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\bin\Debug\SmokeyTime.exe.config
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime.exe
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime.pdb
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime.csprojResolveAssemblyReference.cache
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Accept.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\AddProduct.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Equipment.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\LoginWindow.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\POS.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Quantity.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Report.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Rezerv.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Settings.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Store.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Users.baml
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Accept.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\AddProduct.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Equipment.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\MainPanel.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\LoginWindow.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\POS.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Quantity.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Report.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Rezerv.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Settings.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Store.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\Users.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\App.g.cs
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime_MarkupCompile.cache
+C:\Users\Timur\Source\Repos\Financial-tracker\Финансовый трекер\SmokeyTime\SmokeyTime\obj\Debug\SmokeyTime_MarkupCompile.lref

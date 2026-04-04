@@ -1,6 +1,6 @@
 using System.Windows;
 using System.Windows.Controls;
-
+using System.Windows.Media;
 namespace SmokeyTime
 {
     public partial class MainWindow : Window
@@ -11,17 +11,13 @@ namespace SmokeyTime
             // Загружаем панель управления по умолчанию
             MainFrame.Content = new DashboardView();
         }
-
         private void TabButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
             if (button == null || button.Tag == null) return;
-
             int tabIndex = int.Parse(button.Tag.ToString());
-            
             // Обновляем стили кнопок
             UpdateButtonStyles(button);
-
             // Переключаем содержимое в зависимости от вкладки
             switch (tabIndex)
             {
@@ -42,27 +38,27 @@ namespace SmokeyTime
                     break;
             }
         }
-
         private void UpdateButtonStyles(Button activeButton)
         {
             // Находим все кнопки в панели навигации
             var navigationPanel = FindName("NavigationPanel") as StackPanel;
             if (navigationPanel == null) return;
-
+            var colorConverter = new ColorConverter();
+            var brushConverter = new BrushConverter();
             foreach (var child in navigationPanel.Children)
             {
                 if (child is Button btn)
                 {
                     if (btn == activeButton)
                     {
-                        btn.Background = (System.Windows.Media.Brush)new System.Windows.Media.ColorConverter().ConvertFromString("#374151");
-                        btn.Foreground = (System.Windows.Media.Brush)new System.Windows.Media.BrushConverter().ConvertFromString("White");
+                        btn.Background = (Brush)colorConverter.ConvertFromString("#374151");
+                        btn.Foreground = (Brush)brushConverter.ConvertFromString("White");
                         btn.FontWeight = FontWeights.SemiBold;
                     }
                     else
                     {
-                        btn.Background = System.Windows.Media.Brushes.Transparent;
-                        btn.Foreground = (System.Windows.Media.Brush)new System.Windows.Media.BrushConverter().ConvertFromString("#d1d5db");
+                        btn.Background = Brushes.Transparent;
+                        btn.Foreground = (Brush)brushConverter.ConvertFromString("#d1d5db");
                         btn.FontWeight = FontWeights.Normal;
                     }
                 }
