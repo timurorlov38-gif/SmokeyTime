@@ -1,0 +1,127 @@
+<UserControl x:Class="SmokeyTime.ReportsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <StackPanel>
+        <!-- Page Header & Period Selector -->
+        <Grid Margin="0,0,0,25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Отчёты и аналитика" FontSize="28" FontWeight="Bold" Foreground="#111827"/>
+                <TextBlock Text="Анализ продаж и эффективности" FontSize="14" Foreground="#6b7280" Margin="0,5,0,0"/>
+            </StackPanel>
+
+            <!-- Period Buttons -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Content="Сегодня" Background="#1a253a" Foreground="White" Padding="20,10" Margin="5,0" 
+                        BorderThickness="0" FontWeight="SemiBold" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Неделя" Background="White" Foreground="#374151" Padding="20,10" Margin="5,0" 
+                        BorderThickness="1" BorderBrush="#e5e7eb" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Месяц" Background="White" Foreground="#374151" Padding="20,10" Margin="5,0" 
+                        BorderThickness="1" BorderBrush="#e5e7eb" Cursor="Hand">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="6" Padding="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Metrics Cards -->
+        <Grid Margin="0,0,0,25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Card 1: Revenue -->
+            <Border Grid.Column="0" Background="White" CornerRadius="10" Padding="25" Margin="0,0,10,0" BorderBrush="#e5e7eb" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="Выручка" FontSize="14" Foreground="#6b7280" Margin="0,0,0,10"/>
+                    <TextBlock Text="0 ₽" FontSize="32" FontWeight="Bold" Foreground="#111827"/>
+                    <TextBlock Text="0 продаж" FontSize="13" Foreground="#9ca3af" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Card 2: Profit -->
+            <Border Grid.Column="1" Background="White" CornerRadius="10" Padding="25" Margin="5,0" BorderBrush="#e5e7eb" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="Прибыль" FontSize="14" Foreground="#6b7280" Margin="0,0,0,10"/>
+                    <TextBlock Text="0 ₽" FontSize="32" FontWeight="Bold" Foreground="#10b981"/>
+                    <TextBlock Text="Маржа: 0%" FontSize="13" Foreground="#9ca3af" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Card 3: Cash -->
+            <Border Grid.Column="2" Background="White" CornerRadius="10" Padding="25" Margin="5,0" BorderBrush="#e5e7eb" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="Наличные" FontSize="14" Foreground="#6b7280" Margin="0,0,0,10"/>
+                    <TextBlock Text="0 ₽" FontSize="32" FontWeight="Bold" Foreground="#111827"/>
+                    <TextBlock Text="0% от выручки" FontSize="13" Foreground="#9ca3af" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Card 4: Card -->
+            <Border Grid.Column="3" Background="White" CornerRadius="10" Padding="25" Margin="10,0,0,0" BorderBrush="#e5e7eb" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="Безналичные" FontSize="14" Foreground="#6b7280" Margin="0,0,0,10"/>
+                    <TextBlock Text="0 ₽" FontSize="32" FontWeight="Bold" Foreground="#111827"/>
+                    <TextBlock Text="0% от выручки" FontSize="13" Foreground="#9ca3af" Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Chart Area -->
+        <Border Background="White" CornerRadius="10" Padding="25" BorderBrush="#e5e7eb" BorderThickness="1" Height="400" VerticalAlignment="Top">
+            <StackPanel>
+                <TextBlock Text="График продаж" FontSize="16" FontWeight="SemiBold" Foreground="#374151" Margin="0,0,0,20"/>
+                <Border Background="#f9fafb" CornerRadius="8" BorderBrush="#e5e7eb" BorderThickness="1" VerticalAlignment="Stretch">
+                    <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" BorderBrush="#e5e7eb" BorderThickness="0,0,0,1"/>
+                            <Border Grid.Row="1" BorderBrush="#e5e7eb" BorderThickness="0,0,0,1"/>
+                            <Border Grid.Row="2" BorderBrush="#e5e7eb" BorderThickness="0,0,0,1"/>
+                            <Border Grid.Row="3" BorderBrush="#e5e7eb" BorderThickness="0,0,0,1"/>
+                            <Border Grid.Row="4" BorderBrush="#e5e7eb" BorderThickness="0,0,0,1"/>
+                        </Grid>
+                        <TextBlock Text="Нет данных для отображения" FontSize="14" Foreground="#9ca3af" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</UserControl>

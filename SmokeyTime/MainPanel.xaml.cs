@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace SmokeyTime
@@ -8,64 +8,65 @@ namespace SmokeyTime
         public MainWindow()
         {
             InitializeComponent();
+            // Загружаем панель управления по умолчанию
+            MainFrame.Content = new DashboardView();
         }
 
-        private void NavButton_Click(object sender, RoutedEventArgs e)
+        private void TabButton_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            if (button == null) return;
+            if (button == null || button.Tag == null) return;
 
-            string target = button.Content.ToString();
-            Window newWindow = null;
+            int tabIndex = int.Parse(button.Tag.ToString());
+            
+            // Обновляем стили кнопок
+            UpdateButtonStyles(button);
 
-            // Старый синтаксис if-else для совместимости
-            if (target == "Панель управления")
+            // Переключаем содержимое в зависимости от вкладки
+            switch (tabIndex)
             {
-                newWindow = null; // Уже на главной
-            }
-            else if (target == "Касса")
-            {
-                newWindow = new POSWindow();
-            }
-            else if (target == "Склад")
-            {
-                newWindow = new WarehouseWindow();
-            }
-            else if (target == "Отчёты")
-            {
-                newWindow = new ReportsWindow();
-            }
-            else if (target == "Настройки")
-            {
-                newWindow = new SettingsWindow();
-            }
-
-            if (newWindow != null)
-            {
-                newWindow.Show();
-                this.Close();
+                case 0: // Панель управления
+                    MainFrame.Content = new DashboardView();
+                    break;
+                case 1: // Касса
+                    MainFrame.Content = new POSView();
+                    break;
+                case 2: // Склад
+                    MainFrame.Content = new WarehouseView();
+                    break;
+                case 3: // Отчёты
+                    MainFrame.Content = new ReportsView();
+                    break;
+                case 4: // Настройки
+                    MainFrame.Content = new SettingsView();
+                    break;
             }
         }
 
-        private void OpenCashRegisterButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateButtonStyles(Button activeButton)
         {
-            var posWindow = new POSWindow();
-            posWindow.Show();
-            this.Close();
-        }
+            // Находим все кнопки в панели навигации
+            var navigationPanel = FindName("NavigationPanel") as StackPanel;
+            if (navigationPanel == null) return;
 
-        private void WarehouseManagementButton_Click(object sender, RoutedEventArgs e)
-        {
-            var warehouseWindow = new WarehouseWindow();
-            warehouseWindow.Show();
-            this.Close();
+            foreach (var child in navigationPanel.Children)
+            {
+                if (child is Button btn)
+                {
+                    if (btn == activeButton)
+                    {
+                        btn.Background = (System.Windows.Media.Brush)new System.Windows.Media.ColorConverter().ConvertFromString("#374151");
+                        btn.Foreground = (System.Windows.Media.Brush)new System.Windows.Media.BrushConverter().ConvertFromString("White");
+                        btn.FontWeight = FontWeights.SemiBold;
+                    }
+                    else
+                    {
+                        btn.Background = System.Windows.Media.Brushes.Transparent;
+                        btn.Foreground = (System.Windows.Media.Brush)new System.Windows.Media.BrushConverter().ConvertFromString("#d1d5db");
+                        btn.FontWeight = FontWeights.Normal;
+                    }
+                }
+            }
         }
-
-        private void ReportsAnalyticsButton_Click(object sender, RoutedEventArgs e)
-        {
-            var reportsWindow = new ReportsWindow();
-            reportsWindow.Show();
-            this.Close();
-        }
-    } // ← Закрывающая скобка класса должна быть ЗДЕСЬ
+    }
 }
