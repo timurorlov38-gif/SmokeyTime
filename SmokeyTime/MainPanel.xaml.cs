@@ -1,6 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+
 namespace SmokeyTime
 {
     public partial class MainWindow : Window
@@ -43,8 +44,7 @@ namespace SmokeyTime
             // Находим все кнопки в панели навигации
             var navigationPanel = FindName("NavigationPanel") as StackPanel;
             if (navigationPanel == null) return;
-            var colorConverter = new ColorConverter();
-            var brushConverter = new BrushConverter();
+
             foreach (var child in navigationPanel.Children)
             {
                 if (child is Button btn)
